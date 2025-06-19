@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import '../../styles/global.css'
+import { UsersManage } from '../../components/UsersManage'
+import { AgencyManage } from '../../components/AgencyManage'
+---
+
+<Layout>
+    <h1 class="text-center text-4xl font-bold mb-10">Administrador Page</h1>
+    <div class="flex justify-between ml-10 mr-10 flex-wrap">
+        <UsersManage client:load />
+        <AgencyManage client:load />
+    </div>
+</Layout>
