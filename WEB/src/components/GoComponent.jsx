@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FileCard } from './FileCard'
+import { BusCard } from './BusCard'
 
 export default function GoComponent() {
     const [lugares, setLugares] = useState([])
@@ -161,7 +161,7 @@ export default function GoComponent() {
                 <div className="ml-10 mr-10 bg-gray-800 dark:bg-sky-400 rounded-xl flex align-center justify-between p-10 items-center gap-5 flex-wrap">
                         {agencias.map((agencia) => (
                             <div className="w-100" key={agencia.id}>
-                                <FileCard
+                                <BusCard
                                     idCard={agencia.id} 
                                     title={agencia.nombre} 
                                     thumbnail={agencia.url_img}
