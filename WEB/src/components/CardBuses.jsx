@@ -1,4 +1,4 @@
-import { FileCard } from './FileCard'
+import { BusCard } from './BusCard'
 import { useEffect, useState } from 'react'
 
 export default function CardBuses() {
@@ -14,11 +14,11 @@ export default function CardBuses() {
         <div className="flex flex-wrap gap-10">
             {posts.map((post) => (
                 <div className="w-[500px]">
-                    <FileCard
-                    key={post.id}
-                    idCard={post.id}
-                    title={post.nombre}
-                    thumbnail={post.url_img}
+                    <BusCard
+                        key={post.id}
+                        idCard={post.id}
+                        title={post.nombre}
+                        thumbnail={post.url_img}
                     />
                 </div>
             )) 
