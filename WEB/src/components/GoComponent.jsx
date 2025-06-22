@@ -21,7 +21,12 @@ export default function GoComponent() {
 
     const encontrarAgencias = async () => {
         if (!origen || !destino) {
-            alert('Debes seleccionar origen y destino');
+            alert(idioma == 'es' ? 'Debes seleccionar origen y destino' : 'You must select origin and destination');
+            return;
+        }
+
+        if (origen === destino){
+            alert(idioma == 'es' ? 'Debes seleccionar diferentes rutas' : "You must select different routes");
             return;
         }
 
