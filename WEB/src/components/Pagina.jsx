@@ -1,22 +1,8 @@
-import { cn } from "@/lib/utils"
-import { LayoutGrid } from "lucide-react"
 import { useEffect, useState } from 'react'
 import { HorariosUsuarios } from './HorariosUsuarios.jsx'
 import { HorariosAdmins } from './HorariosAdmins.jsx'
 import SimpeCard from "./SimpeCard.jsx"
 import '../styles/global.css'
-
-function NavItem({ href, icon, children, active }) {
-  return (
-    <a
-      href={href}
-      className={cn("flex items-center gap-2 px-3 py-2 text-sm text-gray-700 dark:text-gray-300 rounded-lg", active && "bg-gray-100")}
-    >
-      {icon}
-      <span>{children}</span>
-    </a>
-  )
-}
 
 export default function FileManager({idCard, privilegios}) {
   const [post, setPost] = useState(null)
