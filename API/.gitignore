@@ -1,0 +1,8 @@
+# environment variables
+.env
+.env.production
+
+.venv
+
+__pycache__/
+routers/__pycache__/

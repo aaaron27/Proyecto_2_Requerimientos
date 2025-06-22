@@ -1,0 +1,34 @@
+---
+export const prerender = false
+
+import Pagina from '../../../components/Pagina.jsx'
+import type { GetStaticPaths } from 'astro'
+import Layout from '../../../layouts/Layout.astro'
+const { id } = Astro.params
+
+export const getStaticPaths = (async () => {
+    const res = await fetch('http://localhost:8000/agencias')
+    const agencias = await res.json()
+    return agencias.map((agencia) => ({
+        params: { id: agencia.id.toString() },
+    }))
+}) satisfies GetStaticPaths
+
+const userCorreoCookie = Astro.cookies.get('correo')
+const correo = userCorreoCookie?.value ? userCorreoCookie.value : null
+
+const userIdCookie = Astro.cookies.get('id_role')
+const id_role = userIdCookie?.value ? JSON.parse(userIdCookie.value) : null
+
+const res = await fetch(`http://localhost:8000/agencias/${id}`)
+const agencia = await res.json()
+
+let adminPrivilegios = false
+
+if ((agencia.correo_usuario == correo && id_role == 2) || id_role == 1)
+    adminPrivilegios = true
+---
+
+<Layout>
+    <Pagina idCard={id} privilegios={adminPrivilegios} client:load />
+</Layout>
