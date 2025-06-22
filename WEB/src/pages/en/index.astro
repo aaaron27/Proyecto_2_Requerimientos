@@ -3,7 +3,6 @@ export const prerender = false
 import Layout from '../../layouts/Layout.astro'
 import CardBuses from '../../components/CardBuses.jsx'
 import '../../styles/global.css'
-import UserHandle from '@/components/UserHandle'
 
 const cookie = Astro.request.headers.get('cookie')
 const cookies = Object.fromEntries(
