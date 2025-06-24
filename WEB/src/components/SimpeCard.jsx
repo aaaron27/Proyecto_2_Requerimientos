@@ -33,7 +33,11 @@ export default function SimpeCard() {
     return (
         <div className="space-y-4 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/50">
             <h1 className="text-center font-bold text-lg">Simpe Movil - 8525 5009</h1>
-            <p className="text-center text-zinc-500 dark:text-zinc-300">Para poder hacer una compra primero inicia sesion</p>
+            <p className="text-center text-zinc-500 dark:text-zinc-300">
+            {
+                idioma == 'es' ? "Para poder hacer una compra primero inicia sesion" : "In order to make a purchase you must first log in"
+            }
+            </p>
             <div className="flex justify-center flex-wrap">
                 <a className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href={`http://localhost:4321/${idioma}/login`}>
                 {idioma == 'es' ? 'Iniciar sesión' : 'Log in'}
